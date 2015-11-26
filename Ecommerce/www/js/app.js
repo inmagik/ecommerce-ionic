@@ -4,7 +4,16 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module(
+  'app', 
+  [
+    'ionic', 
+    'app.networkconfig',
+    'app.statesconfig',
+    'app.permissions',
+    'http-auth-interceptor'
+  ]
+)
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,54 +29,27 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       StatusBar.styleDefault();
     }
   });
+
+
+  //hook provided by http-auth-interceptor
+  /*
+  $rootScope.$on('event:auth-loginRequired', function(event, data){
+      //normally redirect to login or open a login popup
+  });
+  */
+
+  // hooks provided by angular-permission
+  // redirections can be handled directly in state definitions, via "redirectTo" parameter
+  
+  //$rootScope.$on('$stateChangePermissionStart', function(evt, toState, toParams){})
+  //$rootScope.$on('$stateChangePermissionAccepted', function(evt, toState, toParams ){});
+  //$rootScope.$on('$stateChangePermissionDenied', function(evt, toState, toParams){})
+
+
+
+
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
-
-    .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
-  })
-
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
-
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  
 });
