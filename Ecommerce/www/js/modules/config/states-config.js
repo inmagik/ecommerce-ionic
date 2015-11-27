@@ -64,6 +64,16 @@ angular.module('app.statesconfig', ['ionic'])
         }
     })
 
+    .state('app.product', {
+        url: '/product/:productId',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/product.html',
+                controller : 'ProductCtrl'
+            }
+        }
+    })
+
     .state('app.search', {
         url: '/search',
         views: {

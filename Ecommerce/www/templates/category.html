@@ -4,7 +4,7 @@
         <h2 class="heading-title">{{category.name}}</h2>
     </div>
     <div ng-repeat="product in products" class="list animate-ripple">
-        <a class="item item-avatar item-button-right">
+        <a class="item item-avatar item-button-right" ui-sref="app.product({productId:product.id})">
             <img src="img/ionic.png">  
             <h2>{{product.name}}</h2>
             <p>{{product.description || '&nbsp;'}}</p>
