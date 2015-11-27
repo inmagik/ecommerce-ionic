@@ -18,17 +18,25 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-      <ion-item menu-close ui-sref="app.home">
+        <ion-item menu-close ui-sref="app.search">
+          Search
+        </ion-item>
+        <ion-item menu-close ui-sref="app.home">
           Home
         </ion-item>
         <ion-item menu-close ui-sref="app.browse">
           Vetrina
         </ion-item>
-        <ion-item menu-close ui-sref="app.search">
-          Search
+        <ion-item class="item-skyblue" menu-close ui-sref="app.category({categoryId:category.id})" ng-repeat="category in shop.product_categories">
+          {{ category.name }}
         </ion-item>
-        <ion-item menu-close ui-sref="app.account">
+        
+
+        <ion-item class="item-dark" menu-close ui-sref="app.account" ng-if="user">
           Account
+        </ion-item>
+        <ion-item class="item-dark" menu-close ui-sref="app.account" ng-if="!user">
+          Login
         </ion-item>
       </ion-list>
     </ion-content>

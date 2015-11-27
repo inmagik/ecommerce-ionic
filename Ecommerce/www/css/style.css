@@ -19,3 +19,9 @@
     width:100%;
     color: #fff;
 }
+
+
+.item.item-skyblue{
+    background-color: deepskyblue;
+    color:white;
+}

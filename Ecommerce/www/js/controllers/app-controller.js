@@ -4,7 +4,7 @@
 angular.module('app')
 .controller('AppCtrl', AppCtrl);
 
-function AppCtrl($scope, $rootScope){
+function AppCtrl($scope, $rootScope, $timeout, DataService){
 
     $rootScope.user = null;
 
@@ -27,6 +27,22 @@ function AppCtrl($scope, $rootScope){
         $scope.logged = false;
     };
     */
+    $rootScope.categoriesById = {};
+
+    DataService.getShop()
+    .then(function(shop){
+        var categoriesById = {};
+        $rootScope.shop = shop;
+        console.log(1, shop)
+        _.each(shop.product_categories, function(cat){
+            console.log(2, cat)
+            categoriesById[cat.id] = cat;
+        })
+        $timeout(function(){
+            $rootScope.categoriesById = categoriesById;
+            console.log(3, $rootScope.categoriesById)
+        })
+    });
 
 };
 

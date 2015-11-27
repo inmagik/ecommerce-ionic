@@ -54,6 +54,16 @@ angular.module('app.statesconfig', ['ionic'])
         }
     })
 
+    .state('app.category', {
+        url: '/category/:categoryId',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/category.html',
+                controller : 'CategoryCtrl'
+            }
+        }
+    })
+
     .state('app.search', {
         url: '/search',
         views: {

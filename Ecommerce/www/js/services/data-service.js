@@ -58,6 +58,10 @@ function DataService(DataServiceRestangular, SHOP_ID){
 
     var shopService = DataServiceRestangular.service('products', DataServiceRestangular.one('shops', SHOP_ID));
     svc.getProducts = shopService.getList;
+
+    svc.getProductsForCategory = function(cat){
+        return shopService.getList({product_category:cat});
+    }
     
 
     return svc;

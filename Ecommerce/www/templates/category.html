@@ -1,0 +1,15 @@
+<ion-view view-title="{{shop.name}}">
+  <ion-content>
+    <div class="heading-box-small">
+        <h2 class="heading-title">{{category.name}}</h2>
+    </div>
+    <div ng-repeat="product in products" class="list animate-ripple">
+        <a class="item item-avatar item-button-right">
+            <img src="img/ionic.png">  
+            <h2>{{product.name}}</h2>
+            <p>{{product.description || '&nbsp;'}}</p>
+            <button class="button button-positive"> € {{product.base_price}}</button>
+        </a>
+    </div>
+  </ion-content>
+</ion-view>

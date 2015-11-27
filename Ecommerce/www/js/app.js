@@ -8,6 +8,7 @@ angular.module(
   'app', 
   [
     'ionic', 
+    'ionic-material',
     'app.constants',
     'app.networkconfig',
     'app.statesconfig',
