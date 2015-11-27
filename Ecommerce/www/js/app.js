@@ -8,10 +8,12 @@ angular.module(
   'app', 
   [
     'ionic', 
+    'app.constants',
     'app.networkconfig',
     'app.statesconfig',
     'app.permissions',
-    'http-auth-interceptor'
+    'http-auth-interceptor',
+    'restangular',
   ]
 )
 

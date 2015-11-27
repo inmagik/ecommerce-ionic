@@ -38,7 +38,8 @@ angular.module('app.statesconfig', ['ionic'])
         url: '/home',
         views: {
             'menuContent': {
-                templateUrl: 'templates/home.html'
+                templateUrl: 'templates/home.html',
+                controller : 'HomeCtrl'
             }
         }
     })
@@ -47,7 +48,8 @@ angular.module('app.statesconfig', ['ionic'])
         url: '/browse',
         views: {
             'menuContent': {
-                templateUrl: 'templates/browse.html'
+                templateUrl: 'templates/browse.html',
+                controller : 'BrowseCtrl'
             }
         }
     })

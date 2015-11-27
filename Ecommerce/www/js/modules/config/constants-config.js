@@ -8,7 +8,8 @@ angular.module('app.constants', [])
 
 .config(function(){})
 
-.constant('baseServerUrl', "http://localhost:8000/api")
+.constant('baseServerUrl', "http://localhost:8000/shops-api/")
+.constant('SHOP_ID', 1)
 
 
 

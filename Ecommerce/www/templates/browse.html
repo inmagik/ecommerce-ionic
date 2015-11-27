@@ -1,5 +1,14 @@
-<ion-view view-title="Browse">
-  <ion-content class="padding">
-    <h2>Browse</h2>
+<ion-view view-title="Vetrina">
+  <ion-content>
+    <div class="heading-box-small">
+        <h2 class="heading-title">Vetrina</h2>
+    </div>
+    <ion-list ng-repeat="product in products">
+        <ion-item class="item item-thumbnail-left">
+            <img src="img/blue-album.jpg">  
+            <h2 class="title">{{product.name}}</h2>
+            <p>Weezer</p>
+        </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

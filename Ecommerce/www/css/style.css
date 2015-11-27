@@ -1,1 +1,21 @@
 /* Empty. Add your own CSS if you like */
+.heading-box{
+    height:200px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background-color: deepskyblue;
+}
+
+.heading-box-small{
+    height:100px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background-color: deepskyblue;
+}
+
+.heading-title{
+    width:100%;
+    color: #fff;
+}
